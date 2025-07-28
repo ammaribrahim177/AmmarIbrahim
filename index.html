@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Ammar Ibrahim - Cybersecurity Expert</title>
+    <title>Dr. Ammar Ibrahim - Cybersecurity Research Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -393,10 +393,42 @@
             margin-bottom: 10px;
         }
         
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
         .publication-meta {
             color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 10px;
+        }
+        
+        .publication-abstract {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .abstract-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .abstract-btn:hover {
+            background: var(--secondary);
         }
         
         /* Experience Section */
@@ -647,6 +679,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                 </ul>
@@ -668,21 +701,23 @@
                     <p><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +20 1124447544 / +20 1110699878</p>
                     <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn</a> | 
-                       <i class="fab fa-github"></i> <a href="#" target="_blank">GitHub</a> | 
-                       <i class="fab fa-ieee"></i> <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank">IEEE Profile</a></p>
+                    <p>
+                        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn</a> | 
+                        <i class="fab fa-github"></i> <a href="#" target="_blank">GitHub</a> | 
+                        <i class="fab fa-ieee"></i> <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank">IEEE Profile</a> |
+                        <i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank">ResearchGate</a>
+                    </p>
                 </div>
                 
                 <p>Multidisciplinary cybersecurity expert with a Ph.D. in Wireless and Cybersecurity. My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
                 
                 <div class="hero-btns">
-                    <a href="#research" class="btn">View Publications</a>
+                    <a href="#publications" class="btn">View Publications</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
         </div>
         <div class="hero-image">
-            <!-- Cybersecurity themed illustration -->
             <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; display: flex; align-items: center; justify-content: center; color: white; font-size: 8rem; opacity: 0.7;">
                 <i class="fas fa-lock"></i>
             </div>
@@ -801,34 +836,73 @@
                     <p>Decentralized security, smart contracts, distributed ledger applications</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications" id="publications" style="background: var(--section-bg);">
+        <div class="container">
+            <h2 style="text-align: center; margin: 60px 0 30px;">Research Publications</h2>
             
-            <h2 style="text-align: center; margin: 60px 0 30px;">Selected Publications</h2>
+            <div class="publications" style="margin-top: 30px;">
+                <div class="publication-item">
+                    <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</a>
+                    <div class="publication-meta">IEEE Conference Publication | 2022</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> This paper presents a novel collision-resistant hash function specifically designed for IoT healthcare blockchain applications. The proposed algorithm enhances ledger security while maintaining efficiency for resource-constrained medical IoT devices. Our implementation demonstrates significant improvements in processing speed and resistance to cryptographic attacks compared to existing solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design of New Collision Resistant Hash Function for Blockchain in V2V Communication</a>
+                    <div class="publication-meta">IEEE SmartNet | 2019</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> This research introduces a specialized hash function for Vehicle-to-Vehicle (V2V) communication systems secured by blockchain technology. The proposed cryptographic solution addresses the unique challenges of high-speed mobile environments, providing enhanced collision resistance and faster verification times for real-time automotive applications.</p>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <a href="#" target="_blank" class="publication-title">Blockchain Supervision Strategy for Electronic Health Records</a>
+                    <div class="publication-meta">IEEE ICEENG | 2020</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> This paper proposes a novel blockchain-based supervision framework for electronic health records (EHR) that enhances data integrity while maintaining patient privacy. The solution implements a multi-layer access control mechanism and decentralized audit trails, significantly improving compliance with healthcare regulations and preventing unauthorized access to sensitive medical data.</p>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <a href="#" target="_blank" class="publication-title">Decentralized IoT Trust Management via Blockchain</a>
+                    <div class="publication-meta">IEEE 3ICT | 2020</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> We present a decentralized trust management system for IoT networks using blockchain technology. The solution eliminates single points of failure in device authentication and establishes a reputation-based trust model that dynamically adjusts device privileges based on behavior patterns, significantly enhancing security in large-scale IoT deployments.</p>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <a href="#" target="_blank" class="publication-title">Blockchain for Decentralized Emergency Management System</a>
+                    <div class="publication-meta">IJCDS | 2023</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> This research implements a blockchain-based emergency management system that coordinates response efforts across multiple agencies without central oversight. The solution provides real-time, tamper-proof information sharing while maintaining data integrity during crisis situations, significantly improving response times and resource allocation efficiency.</p>
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <a href="#" target="_blank" class="publication-title">DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</a>
+                    <div class="publication-meta">IEEE | 2024</div>
+                    <button class="abstract-btn">Show Abstract</button>
+                    <div class="publication-abstract">
+                        <p><strong>Abstract:</strong> This paper presents a hybrid approach combining machine learning algorithms with blockchain technology to detect and mitigate DDoS attacks in IoT environments. The system establishes a decentralized defense mechanism where IoT devices collaboratively identify and isolate malicious traffic patterns, significantly improving network resilience against large-scale coordinated attacks.</p>
+                    </div>
+                </div>
+            </div>
             
-            <div class="publications">
-                <div class="publication-item">
-                    <h3>Design of New Collision Resistant Hash Function for Blockchain in V2V Communication</h3>
-                    <div class="publication-meta">IEEE SmartNet, 2019</div>
-                </div>
-                <div class="publication-item">
-                    <h3>Blockchain Supervision Strategy for Electronic Health Records</h3>
-                    <div class="publication-meta">IEEE ICEENG, 2020</div>
-                </div>
-                <div class="publication-item">
-                    <h3>Decentralized IoT Trust Management via Blockchain</h3>
-                    <div class="publication-meta">IEEE 3ICT, 2020</div>
-                </div>
-                <div class="publication-item">
-                    <h3>Fast Hash Function for IoT Healthcare Blockchain Ledger</h3>
-                    <div class="publication-meta">IEEE 3ICT, 2022</div>
-                </div>
-                <div class="publication-item">
-                    <h3>Blockchain for Decentralized Emergency Management System</h3>
-                    <div class="publication-meta">IJCDS, 2023</div>
-                </div>
-                <div class="publication-item">
-                    <h3>DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</h3>
-                    <div class="publication-meta">IEEE, 2024</div>
-                </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://ieeexplore.ieee.org/author/37088376152" class="btn" target="_blank">View All Publications on IEEE Xplore</a>
+                <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" class="btn btn-outline" target="_blank" style="margin-left: 15px;">ResearchGate Profile</a>
             </div>
         </div>
     </section>
@@ -975,6 +1049,7 @@
                         <a href="mailto:ammaribrahim177@gmail.com"><i class="fas fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank"><i class="fab fa-ieee"></i></a>
+                        <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank"><i class="fab fa-researchgate"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
@@ -998,7 +1073,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Dr. Ammar Ibrahim. All Rights Reserved. | Designed with Academic Professionals in Mind</p>
+                <p>&copy; 2023 Dr. Ammar Ibrahim. All Rights Reserved. | Designed for Academic Excellence</p>
             </div>
         </div>
     </footer>
@@ -1035,6 +1110,20 @@
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+        
+        // Abstract toggle functionality
+        document.querySelectorAll('.abstract-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const abstract = button.nextElementSibling;
+                if (abstract.style.display === 'block') {
+                    abstract.style.display = 'none';
+                    button.textContent = 'Show Abstract';
+                } else {
+                    abstract.style.display = 'block';
+                    button.textContent = 'Hide Abstract';
                 }
             });
         });
