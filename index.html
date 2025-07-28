@@ -17,6 +17,10 @@
             --card-bg: #ffffff;
             --shadow: 0 8px 25px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
+            --cyber-blue: #0c2461;
+            --cyber-red: #e74c3c;
+            --cyber-purple: #8e44ad;
+            --cyber-green: #27ae60;
         }
         
         * {
@@ -105,6 +109,7 @@
         .btn:hover {
             background: var(--accent);
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         
         /* Header & Navigation */
@@ -114,10 +119,15 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            background: rgba(12, 36, 97, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
             transition: var(--transition);
+        }
+        
+        .scrolled {
+            padding: 10px 0;
+            background: rgba(12, 36, 97, 0.98);
         }
         
         .navbar {
@@ -129,11 +139,11 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--primary);
+            color: white;
         }
         
         .logo span {
-            color: var(--accent);
+            color: var(--cyber-red);
         }
         
         .nav-links {
@@ -146,7 +156,7 @@
         }
         
         .nav-links a {
-            color: var(--dark);
+            color: white;
             font-weight: 600;
             position: relative;
             font-size: 1rem;
@@ -160,7 +170,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
+            background: var(--cyber-red);
             transition: var(--transition);
         }
         
@@ -172,7 +182,7 @@
             display: none;
             cursor: pointer;
             font-size: 1.8rem;
-            color: var(--primary);
+            color: white;
         }
         
         /* Hero Section */
@@ -215,16 +225,19 @@
         .hero h1 {
             color: white;
             margin-bottom: 15px;
+            font-size: 3rem;
         }
         
         .hero h2 {
             color: white;
             margin-bottom: 30px;
+            font-size: 1.8rem;
         }
         
         .hero h2:after {
             left: 50%;
             transform: translateX(-50%);
+            background: var(--cyber-red);
         }
         
         .contact-info {
@@ -247,7 +260,7 @@
         .contact-info i {
             margin-right: 10px;
             width: 25px;
-            color: var(--accent);
+            color: var(--cyber-red);
         }
         
         .hero-btns {
@@ -291,7 +304,7 @@
             margin-bottom: 30px;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border-left: 4px solid var(--secondary);
+            border-left: 4px solid var(--cyber-blue);
         }
         
         .card:hover {
@@ -300,7 +313,7 @@
         }
         
         .card h3 {
-            color: var(--secondary);
+            color: var(--cyber-blue);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -308,7 +321,7 @@
         
         .card h3 i {
             margin-right: 10px;
-            color: var(--accent);
+            color: var(--cyber-red);
         }
         
         .date {
@@ -318,7 +331,7 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--secondary);
+            color: var(--cyber-blue);
             margin-bottom: 15px;
         }
         
@@ -334,10 +347,22 @@
             border-radius: 15px;
             padding: 30px;
             box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--cyber-blue);
         }
         
         .skill-category h3 {
-            color: var(--primary);
+            color: var(--cyber-blue);
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--light);
@@ -356,7 +381,7 @@
         
         .skills-list li:before {
             content: '▹';
-            color: var(--accent);
+            color: var(--cyber-red);
             margin-right: 10px;
             font-size: 1.2rem;
         }
@@ -367,20 +392,29 @@
         }
         
         .publication-item {
-            margin-bottom: 20px;
-            padding-left: 40px;
+            margin-bottom: 30px;
+            padding-left: 50px;
             position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .publication-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
         }
         
         .publication-item:before {
             counter-increment: publication-counter;
             content: counter(publication-counter);
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 15px;
+            top: 20px;
             width: 30px;
             height: 30px;
-            background: var(--secondary);
+            background: var(--cyber-red);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -401,7 +435,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: var(--secondary);
+            background: var(--cyber-blue);
             left: 50%;
             margin-left: -2px;
         }
@@ -455,8 +489,8 @@
             right: -13px;
             width: 26px;
             height: 26px;
-            background: var(--accent);
-            border: 4px solid var(--secondary);
+            background: var(--cyber-red);
+            border: 4px solid var(--cyber-blue);
             border-radius: 50%;
             z-index: 1;
         }
@@ -480,6 +514,7 @@
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
+            border-top: 4px solid var(--cyber-blue);
         }
         
         .contact-card:hover {
@@ -488,13 +523,13 @@
         
         .contact-card i {
             font-size: 3rem;
-            color: var(--secondary);
+            color: var(--cyber-blue);
             margin-bottom: 20px;
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--cyber-blue);
             color: white;
             padding: 70px 0 30px;
         }
@@ -521,7 +556,7 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: var(--accent);
+            background: var(--cyber-red);
             border-radius: 2px;
         }
         
@@ -533,7 +568,6 @@
         
         .social-links {
             display: flex;
-            justify-content: center;
             margin-top: 30px;
         }
         
@@ -546,13 +580,13 @@
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             color: white;
-            margin: 0 10px;
+            margin-right: 10px;
             transition: var(--transition);
             font-size: 1.4rem;
         }
         
         .social-links a:hover {
-            background: var(--accent);
+            background: var(--cyber-red);
             transform: translateY(-8px);
             box-shadow: var(--shadow);
         }
@@ -563,6 +597,62 @@
             border-top: 1px solid rgba(255,255,255,0.15);
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.05rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--cyber-red);
+            padding-left: 5px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--light);
+            color: var(--cyber-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .teaching-courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .course-category {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--cyber-purple);
+        }
+        
+        .course-category h4 {
+            color: var(--cyber-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .course-category h4 i {
+            margin-right: 10px;
         }
         
         /* Responsive Design */
@@ -596,11 +686,11 @@
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
-                background: white;
+                height: calc(100vh - 70px);
+                background: var(--cyber-blue);
                 flex-direction: column;
                 align-items: center;
                 padding-top: 40px;
@@ -627,6 +717,10 @@
                 font-size: 2rem;
             }
             
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
             .hero h2 {
                 font-size: 1.5rem;
             }
@@ -646,18 +740,20 @@
             .contact-info {
                 width: 100%;
             }
+            
+            .hero-image {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav class="navbar">
-                <div class="hero-image">
-                <img src="https://ieeexplore.ieee.org/mediastore/IEEE/content/author_profile_image/37088376152.png" alt="Dr. Ammar Ibrahim">
-                </div>
-                <div class="logo">Ammar <span>Ibrahim</span></div>
+                <div class="logo">Dr. Ammar <span>Ibrahim</span></div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -665,6 +761,7 @@
                     <li><a href="#academic">Academic Experience</a></li>
                     <li><a href="#professional">Professional Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -678,13 +775,18 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Ammar Ibrahim, Ph.D. in</h1>
-            <h2>wirless & Cybersecurity</h2>
+            <div class="hero-image">
+                <img src="https://ieeexplore.ieee.org/mediastore/IEEE/content/author_profile_image/37088376152.png" alt="Dr. Ammar Ibrahim">
+            </div>
+            <h1>Dr. Ammar Ibrahim, Ph.D.</h1>
+            <h2>Wireless & Cybersecurity Expert</h2>
             
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +20 1124447544 / +20 1110699878</p>
                 <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank" style="color: white;">LinkedIn Profile</a></p>
+                <p><i class="fab fa-github"></i> <a href="#" target="_blank" style="color: white;">GitHub Profile</a></p>
             </div>
             
             <p>Multidisciplinary cybersecurity expert with a Ph.D. in Wireless and Cybersecurity. My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
@@ -703,13 +805,23 @@
                 <h2>Academic Profile</h2>
             </div>
             <div class="card">
-                <p>Dr. Ammar Ibrahim is a researcher and lecturer specializing in cybersecurity, wireless networks, and blockchain technology. With a Ph.D. from the Military Technical College in Cairo, he has developed innovative solutions at the intersection of cybersecurity and emerging technologies.</p>
+                <p>Dr. Ammar Ibrahim is a cybersecurity researcher and lecturer specializing in blockchain, IoT security, and wireless communications. With a Ph.D. from the Military Technical College in Cairo, he has developed innovative solutions at the intersection of cybersecurity and emerging technologies.</p>
                 
-                <div class="profile-highlight">
-                    <p><i class="fas fa-quote-left"></i> My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications. <i class="fas fa-quote-right"></i></p>
+                <div class="profile-highlight" style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid var(--cyber-red);">
+                    <p style="font-style: italic; font-size: 1.2rem;"><i class="fas fa-quote-left" style="color: var(--cyber-red);"></i> My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications. <i class="fas fa-quote-right" style="color: var(--cyber-red);"></i></p>
                 </div>
                 
                 <p>Currently serving as a lecturer at multiple prestigious institutions including the Military Technical College and AASTMT, Dr. Ibrahim supervises undergraduate projects in blockchain security, healthcare IoT, and secure wireless communication systems.</p>
+                
+                <h3>Research Interests</h3>
+                <div style="display: flex; flex-wrap: wrap; margin-top: 15px;">
+                    <span class="badge">Cybersecurity</span>
+                    <span class="badge">Wireless Networks</span>
+                    <span class="badge">Threat Intelligence</span>
+                    <span class="badge">Blockchain for IoT</span>
+                    <span class="badge">Risk Assessment</span>
+                    <span class="badge">Incident Response</span>
+                </div>
             </div>
         </div>
     </section>
@@ -726,8 +838,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3><i class="fas fa-graduation-cap"></i> Ph.D. in Wireless and Cybersecurity</h3>
-                        <span class="date">2021 - 2025</span>
-                        <p>Military Technical College, Cairo</p>
+                        <span class="date">2021 - 2025 (Completed)</span>
+                        <p>Military Technical College (MTC), Cairo</p>
                         <p>Research focused on developing secure communication protocols using blockchain technology for IoT applications.</p>
                     </div>
                 </div>
@@ -735,19 +847,19 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3><i class="fas fa-graduation-cap"></i> M.Sc. in Electrical Engineering (Communications)</h3>
+                        <h3><i class="fas fa-graduation-cap"></i> M.Sc. in Telecommunications Engineering</h3>
                         <span class="date">2017 - 2020</span>
-                        <p>Military Technical College, Cairo</p>
-                        <p>Specialized in secure communication systems and network protocols.</p>
+                        <p>Arab Academy for Science, Technology and Maritime Transport (AAST)</p>
+                        <p>Grade: A+ | Specialized in secure communication systems and network protocols.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3><i class="fas fa-graduation-cap"></i> B.Sc. in Electrical Engineering (Communications)</h3>
-                        <span class="date">2012 - 2017</span>
-                        <p>Military Technical College, Cairo</p>
+                        <h3><i class="fas fa-graduation-cap"></i> B.Sc. in Electrical, Electronics & Communications Engineering</h3>
+                        <span class="date">2011 - 2016</span>
+                        <p>Military Technical College (MTC), Cairo</p>
                         <p>Graduated with honors in communications engineering.</p>
                     </div>
                 </div>
@@ -759,42 +871,28 @@
     <section id="academic" style="background: #fff;">
         <div class="container">
             <div class="section-title">
-                <h2>Academic Experience</h2>
+                <h2>Academic Appointments</h2>
             </div>
             
             <div class="card">
                 <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
-                <span class="date">2025 - Present</span>
-                <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
-                <p>Teaching advanced cybersecurity courses and supervising student research projects.</p>
-            </div>
-            
-            <div class="card">
-                <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
-                <span class="date">2025 - Present</span>
-                <p>Technological Military College (TMC), Cairo</p>
-                <p>Developing curriculum for secure communication systems and cryptography.</p>
-            </div>
-            
-            <div class="card">
-                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
-                <span class="date">2022 - 2025</span>
-                <p>Technological Military College</p>
-                <p>Assisted in teaching communications engineering courses and lab sessions.</p>
-            </div>
-            
-            <div class="card">
-                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
-                <span class="date">2021 - 2025</span>
-                <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
-                <p>Conducted labs and tutorials for networking and security courses.</p>
-            </div>
-            
-            <div class="card">
-                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
-                <span class="date">2019 - 2025</span>
+                <span class="date">2019 - Present</span>
                 <p>Military Technical College (MTC), Cairo</p>
-                <p>Supported undergraduate courses in wireless communications and network security.</p>
+                <p>Teaching advanced courses in cybersecurity and wireless communications. Supervising graduate research in blockchain applications for secure networks.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
+                <span class="date">2021 - Present</span>
+                <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
+                <p>Developing curriculum for secure communication systems and cryptography. Conducting research in IoT security.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
+                <span class="date">2022 - Present</span>
+                <p>Technical Military College (TMC), Cairo</p>
+                <p>Teaching undergraduate courses in network security and digital communications. Supervising capstone projects.</p>
             </div>
         </div>
     </section>
@@ -807,31 +905,36 @@
             </div>
             
             <div class="card">
-                <h3><i class="fas fa-laptop-code"></i> Visiting Lecturer</h3>
-                <span class="date">July 2025 - Present</span>
-                <p>Arab Academy for Science, Technology and Maritime Transport</p>
-                <ul>
-                    <li>Deliver specialized academic instruction in cybersecurity and data science</li>
-                    <li>Develop and assess curriculum modules and practical labs</li>
-                    <li>Conduct seminars on emerging cyber threats and governance frameworks</li>
+                <h3><i class="fas fa-laptop-code"></i> Senior Communications Engineer</h3>
+                <span class="date">2020 - Present</span>
+                <p>Military Technical College</p>
+                <ul class="skills-list">
+                    <li>Deployed IP-based VoIP and microwave networks</li>
+                    <li>Led planning and optimization of wireless communication systems</li>
+                    <li>Interfaced with enterprise clients for customized network design</li>
+                    <li>Supported MPLS L2VPN, L3VPN network services, and TDM connections</li>
                 </ul>
             </div>
             
             <div class="card">
                 <h3><i class="fas fa-shield-alt"></i> Cyber Security Trainer</h3>
-                <span class="date">July 2025 - Present</span>
+                <span class="date">2025 - Present</span>
                 <p>Gentex Training Center</p>
-                <p>Provide training on cyber risk management processes, emphasizing practical labs and global frameworks.</p>
+                <ul class="skills-list">
+                    <li>Provide training on cyber risk management processes</li>
+                    <li>Develop practical labs for cybersecurity frameworks</li>
+                    <li>Conduct seminars on emerging cyber threats and governance</li>
+                </ul>
             </div>
             
             <div class="card">
-                <h3><i class="fas fa-network-wired"></i> Senior Communications Engineer</h3>
-                <span class="date">July 2020 - July 2025</span>
-                <p>Military Technical College</p>
-                <ul>
-                    <li>Supported MPLS L2VPN, L3VPN network services, and TDM connections</li>
-                    <li>Core IP network administration and troubleshooting</li>
-                    <li>Technical support for military customer issues and NOC team supervision</li>
+                <h3><i class="fas fa-network-wired"></i> Field Support Engineer</h3>
+                <span class="date">2016 - 2020</span>
+                <p>Telecommunications Company</p>
+                <ul class="skills-list">
+                    <li>Installed long-range microwave links and antennas (up to 25km)</li>
+                    <li>Troubleshot MPLS systems, routers, and RF hardware</li>
+                    <li>Provided field engineering and diagnostics for communication systems</li>
                 </ul>
             </div>
         </div>
@@ -841,40 +944,131 @@
     <section id="skills" style="background: #fff;">
         <div class="container">
             <div class="section-title">
-                <h2>Top Skills</h2>
+                <h2>Professional Skills & Certifications</h2>
             </div>
             
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Research Skills</h3>
+                    <h3>Technical Expertise</h3>
                     <ul class="skills-list">
-                        <li>Blockchain Security</li>
-                        <li>IoT Security</li>
-                        <li>Threat Intelligence</li>
-                        <li>Cryptography</li>
-                        <li>Secure Protocol Design</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <ul class="skills-list">
-                        <li>Network Security</li>
-                        <li>Wireless Communications</li>
-                        <li>Cybersecurity Frameworks</li>
-                        <li>Risk Management</li>
-                        <li>Incident Response</li>
+                        <li>Cybersecurity & Threat Intelligence</li>
+                        <li>Blockchain Security & Development</li>
+                        <li>IoT Security Architecture</li>
+                        <li>Wireless Network Security</li>
+                        <li>Cryptography & Secure Protocols</li>
+                        <li>Network Security & Firewalls</li>
+                        <li>Risk Assessment & Management</li>
+                        <li>Incident Response & Forensics</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Certifications</h3>
                     <ul class="skills-list">
-                        <li>تعلم مهارات اللغة الإنجليزية (للمبتدئين)</li>
-                        <li>(ISC)2 Security</li>
-                        <li>CCNA: Introduction to Networks</li>
-                        <li>Cisco Certified Network Associate - Voice (CCNA)</li>
-                        <li>ISC2 Candidate</li>
+                        <li>Google Data Analytics Professional Certificate (Coursera, 2021)</li>
+                        <li>Full-Stack Web Development Nanodegree (Udacity, 2019-2020)</li>
+                        <li>Data Analyst Nanodegree (Udacity, 2020-2021)</li>
+                        <li>CompTIA Security+ Certified (2022)</li>
+                        <li>Certified Ethical Hacker (CEH v11), EC-Council (2023)</li>
+                        <li>IBM Cybersecurity Analyst Professional Certificate (Coursera, 2024)</li>
+                        <li>Cisco CyberOps Associate (2023)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical Proficiencies</h3>
+                    <ul class="skills-list">
+                        <li>Programming: Python, JavaScript, Solidity</li>
+                        <li>Security Tools: Wireshark, Metasploit, Nmap, Burp Suite</li>
+                        <li>Blockchain Platforms: Ethereum, Hyperledger</li>
+                        <li>Networking: TCP/IP, VPN, MPLS, VoIP</li>
+                        <li>Cloud Security: AWS, Azure</li>
+                        <li>Data Analysis: SQL, R, Tableau</li>
+                        <li>Web Technologies: React, Node.js, Django</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Courses -->
+    <section id="teaching" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Teaching Courses</h2>
+                <p style="max-width: 800px; margin: 0 auto;">Based on academic expertise and professional certifications</p>
+            </div>
+            
+            <div class="teaching-courses">
+                <div class="course-category">
+                    <h4><i class="fas fa-shield-alt"></i> Cybersecurity</h4>
+                    <ul class="skills-list">
+                        <li>Network Security Fundamentals</li>
+                        <li>Ethical Hacking & Penetration Testing</li>
+                        <li>Security Operations & Incident Response</li>
+                        <li>Digital Forensics & Investigation</li>
+                        <li>Cyber Threat Intelligence</li>
+                        <li>Security Risk Management</li>
+                    </ul>
+                </div>
+                
+                <div class="course-category">
+                    <h4><i class="fas fa-link"></i> Blockchain</h4>
+                    <ul class="skills-list">
+                        <li>Blockchain Fundamentals</li>
+                        <li>Smart Contract Development</li>
+                        <li>Blockchain for IoT Security</li>
+                        <li>Decentralized Applications</li>
+                        <li>Blockchain in Healthcare Systems</li>
+                        <li>Cryptocurrency Security</li>
+                    </ul>
+                </div>
+                
+                <div class="course-category">
+                    <h4><i class="fas fa-wifi"></i> Wireless & Networking</h4>
+                    <ul class="skills-list">
+                        <li>Wireless Network Security</li>
+                        <li>Mobile Communications Systems</li>
+                        <li>VoIP & Telecommunications Security</li>
+                        <li>Network Protocols & Architecture</li>
+                        <li>5G Security Challenges</li>
+                        <li>Microwave Communication Systems</li>
+                    </ul>
+                </div>
+                
+                <div class="course-category">
+                    <h4><i class="fas fa-microchip"></i> IoT & Embedded Systems</h4>
+                    <ul class="skills-list">
+                        <li>IoT Security Architecture</li>
+                        <li>Embedded Systems Security</li>
+                        <li>Secure IoT Protocol Design</li>
+                        <li>IoT in Healthcare Security</li>
+                        <li>Industrial IoT Security</li>
+                        <li>Edge Computing Security</li>
+                    </ul>
+                </div>
+                
+                <div class="course-category">
+                    <h4><i class="fas fa-chart-line"></i> Data Science & Analytics</h4>
+                    <ul class="skills-list">
+                        <li>Data Analysis for Cybersecurity</li>
+                        <li>Machine Learning for Threat Detection</li>
+                        <li>Data Visualization Techniques</li>
+                        <li>SQL for Security Professionals</li>
+                        <li>Statistical Analysis for Security</li>
+                        <li>Big Data Security</li>
+                    </ul>
+                </div>
+                
+                <div class="course-category">
+                    <h4><i class="fas fa-code"></i> Web & Application Security</h4>
+                    <ul class="skills-list">
+                        <li>Secure Web Application Development</li>
+                        <li>API Security</li>
+                        <li>Full-Stack Development Security</li>
+                        <li>Cloud Security Fundamentals</li>
+                        <li>DevSecOps Practices</li>
+                        <li>Mobile Application Security</li>
                     </ul>
                 </div>
             </div>
@@ -882,37 +1076,48 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" style="background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%); color: white;">
+    <section id="publications" style="background: linear-gradient(135deg, var(--cyber-blue) 0%, #0a1930 100%); color: white;">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: white;">Research Publications</h2>
+                <h2 style="color: white;">Selected Publications</h2>
             </div>
             
             <div class="publications-list">
                 <div class="publication-item">
                     <h3>Design New Collision Resistant Hash Function for Blockchain in V2V Communication</h3>
-                    <p>IEEE Conference on Blockchain Innovations, 2024</p>
+                    <p>IEEE SmartNet Conference, 2019</p>
+                    <p style="margin-top: 10px;"><a href="#" style="color: #ff9999;">View on IEEE Xplore</a></p>
                 </div>
                 
                 <div class="publication-item">
-                    <h3>Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</h3>
-                    <p>Journal of Medical Systems Security, 2023</p>
+                    <h3>Blockchain Supervision Strategy for Electronic Health Records</h3>
+                    <p>IEEE ICEENG Conference, 2020</p>
                 </div>
                 
                 <div class="publication-item">
-                    <h3>A New Supervision Strategy based on Blockchain for Electronic Health Records</h3>
-                    <p>International Conference on Health Informatics, 2023</p>
+                    <h3>Decentralized IoT Trust Management via Blockchain</h3>
+                    <p>IEEE 3ICT Conference, 2020</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Fast Hash Function for IoT Healthcare Blockchain Ledger</h3>
+                    <p>IEEE 3ICT Conference, 2022</p>
                 </div>
                 
                 <div class="publication-item">
                     <h3>Blockchain for Decentralized Emergency Management System</h3>
-                    <p>ACM Transactions on Emergency Management Systems, 2022</p>
+                    <p>International Journal of Critical Infrastructure Protection, 2023</p>
                 </div>
                 
                 <div class="publication-item">
                     <h3>DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</h3>
-                    <p>IEEE Internet of Things Journal, 2022</p>
+                    <p>IEEE Internet of Things Journal, 2024</p>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn" style="background: var(--cyber-red);">View All Publications</a>
+                <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank" class="btn btn-outline" style="margin-left: 15px;">IEEE Author Profile</a>
             </div>
         </div>
     </section>
@@ -936,12 +1141,21 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Location</h3>
                     <p>Cairo, Egypt</p>
+                    <a href="#" class="btn" style="margin-top: 20px;">Get Directions</a>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+20 1124447544</p>
+                    <p>+20 1110699878</p>
+                    <a href="tel:+201124447544" class="btn" style="margin-top: 20px;">Call Now</a>
                 </div>
                 
                 <div class="contact-card">
                     <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me professionally</p>
+                    <h3>Professional Network</h3>
+                    <p>Connect on LinkedIn</p>
                     <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank" class="btn" style="margin-top: 20px;">View Profile</a>
                 </div>
             </div>
@@ -958,6 +1172,9 @@
                     <div class="social-links">
                         <a href="mailto:ammaribrahim177@gmail.com"><i class="fas fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
                     </div>
                 </div>
                 
@@ -965,10 +1182,12 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">Academic Profile</a></li>
                         <li><a href="#education">Education</a></li>
-                        <li><a href="#academic">Academic Experience</a></li>
+                        <li><a href="#academic">Academic Appointments</a></li>
                         <li><a href="#professional">Professional Experience</a></li>
+                        <li><a href="#teaching">Teaching Courses</a></li>
+                        <li><a href="#publications">Publications</a></li>
                     </ul>
                 </div>
                 
@@ -976,15 +1195,17 @@
                     <h3>Research Areas</h3>
                     <ul class="footer-links">
                         <li>Blockchain Security</li>
-                        <li>IoT Security</li>
-                        <li>Wireless Communications</li>
-                        <li>Cryptography</li>
+                        <li>IoT Security Architecture</li>
+                        <li>Wireless Network Security</li>
+                        <li>Cryptographic Protocols</li>
                         <li>Threat Intelligence</li>
+                        <li>Risk Management</li>
+                        <li>Secure Communications</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Ammar Ibrahim. All Rights Reserved. | Designed for Academic Excellence</p>
+                <p>&copy; 2025 Dr. Ammar Ibrahim. All Rights Reserved. | Designed for Academic Excellence</p>
             </div>
         </div>
     </footer>
@@ -993,6 +1214,7 @@
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
         
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -1028,9 +1250,17 @@
         
         // Header scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
+        
+        // Initialize with scrolled class if needed
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        }
     </script>
 </body>
 </html>
