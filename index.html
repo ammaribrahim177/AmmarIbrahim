@@ -1,20 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ammar Ibrahim - Cybersecurity Research Expert</title>
+    <title>Dr. Ammar Ibrahim - Cybersecurity Research Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4A90E2; /* Soft blue */
-            --secondary: #D9E4F5; /* Light blue for background */
-            --accent: #FF6F61; /* Warm coral for accents */
-            --text-color: #333; /* Dark text for readability */
-            --card-bg: #FFFFFF; /* Card background */
-            --shadow-md: 0 8px 25px rgba(0,0,0,0.1);
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #34495e;
+            --card-bg: #ffffff;
+            --shadow: 0 8px 25px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -25,14 +27,14 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--secondary);
-            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
         
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -51,6 +53,7 @@
         
         h1 {
             font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         h2 {
@@ -72,14 +75,13 @@
         
         p {
             margin-bottom: 20px;
-            color: var(--text-color);
             font-size: 1.1rem;
         }
         
         a {
             text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s ease;
+            color: var(--secondary);
+            transition: var(--transition);
         }
         
         a:hover {
@@ -89,15 +91,15 @@
         .btn {
             display: inline-block;
             padding: 14px 30px;
-            background: var(--primary);
+            background: var(--secondary);
             color: white;
             border-radius: 50px;
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 1rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
         }
         
         .btn:hover {
@@ -113,9 +115,9 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
         }
         
         .navbar {
@@ -125,9 +127,13 @@
         }
         
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
         }
         
         .nav-links {
@@ -136,18 +142,30 @@
         }
         
         .nav-links li {
-            margin-left: 35px;
+            margin-left: 25px;
         }
         
         .nav-links a {
-            color: var(--text-color);
+            color: var(--dark);
             font-weight: 600;
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding: 5px 0;
         }
         
-        .nav-links a:hover {
-            color: var(--primary);
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         .hamburger {
@@ -164,274 +182,321 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(74, 144, 226, 0.7)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.7)), url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             padding: 0 20px;
-            text-align: center;
-            color: white;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-image {
             position: relative;
-            width: 120px; /* Set a smaller size */
-            height: 120px; /* Set height equal to width for a circle */
-            border-radius: 50%; /* Makes the image circular */
-            overflow: hidden; /* Ensures the image fits within the circle */
-            margin: 20px auto; /* Center the image */
-            box-shadow: var(--shadow-md); /* Optional: Add shadow for better visibility */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
         }
         
         .hero-image img {
-            width: 100%; /* Make image responsive */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Ensure image is treated as a block element */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        /* About Section */
-        .about {
-            background: #F0F4FF; /* Light background for about section */
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .academic-profile {
-            background: var(--card-bg);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.4s ease;
-        }
-        
-        .academic-profile:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .profile-highlight {
-            background: var(--primary);
+        .hero h1 {
             color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-            box-shadow: var(--shadow-md);
-            font-size: 1.1rem;
-            line-height: 1.7;
+            margin-bottom: 15px;
         }
         
-        /* Education Section */
-        .education {
-            background: #E4E9FF; /* Light background for education section */
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 850px;
-            margin: 0 auto;
-            z-index: 1;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 5px;
-            background: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2.5px;
-        }
-        
-        .timeline-item {
-            padding: 25px 45px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-content {
-            padding: 30px;
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Research Section */
-        .research {
-            background: #F0F4FF; /* Light background for research section */
-        }
-        
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 35px;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .interest-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--primary);
-        }
-        
-        .interest-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .interest-icon {
-            font-size: 3.5rem;
-            color: var(--primary);
+        .hero h2 {
+            color: white;
             margin-bottom: 30px;
-            transition: transform 0.4s ease;
         }
         
-        .interest-card:hover .interest-icon {
-            transform: scale(1.2);
+        .hero h2:after {
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        /* Publications Section */
-        .publications {
-            background: #E4E9FF; /* Light background for publications section */
-            padding: 40px;
+        .contact-info {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            display: inline-block;
+            text-align: left;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            width: 25px;
+            color: var(--accent);
+        }
+        
+        .hero-btns {
+            margin-top: 30px;
+        }
+        
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .date {
+            background: var(--light);
+            display: inline-block;
+            padding: 5px 15px;
             border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skills-list li:before {
+            content: '▹';
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Publications */
+        .publications-list {
+            counter-reset: publication-counter;
         }
         
         .publication-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            transition: all 0.4s ease;
-        }
-        
-        .publication-item:hover {
-            background: rgba(255, 111, 97, 0.1);
-            border-radius: 12px;
-            padding: 25px;
-        }
-        
-        .publication-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .publication-meta {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        /* Experience Section */
-        .experience {
-            background: #F0F4FF; /* Light background for experience section */
-        }
-        
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 40px;
+            margin-bottom: 20px;
+            padding-left: 40px;
             position: relative;
-            z-index: 1;
         }
         
-        .experience-card {
+        .publication-item:before {
+            counter-increment: publication-counter;
+            content: counter(publication-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary);
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding-right: 30px;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 30px;
+            padding-right: 0;
+        }
+        
+        .timeline-content {
             background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
             position: relative;
         }
         
-        .experience-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-md);
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
         }
         
-        .experience-header {
-            background: var(--primary);
-            color: white;
-            padding: 25px;
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -15px;
+            border-width: 15px 0 15px 15px;
+            border-color: transparent transparent transparent var(--card-bg);
         }
         
-        .experience-header h3 {
-            margin-bottom: 10px;
-            color: white;
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -15px;
+            border-width: 15px 15px 15px 0;
+            border-color: transparent var(--card-bg) transparent transparent;
         }
         
-        /* Certifications Section */
-        .certifications {
-            background: #E4E9FF; /* Light background for certifications section */
-        }
-        
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            position: relative;
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            right: -13px;
+            width: 26px;
+            height: 26px;
+            background: var(--accent);
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
             z-index: 1;
         }
         
-        .cert-card {
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -13px;
+            right: auto;
+        }
+        
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
             background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: flex-start;
-            transition: transform 0.4s ease;
-            border-left: 5px solid var(--primary);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
         }
         
-        .cert-card:hover {
+        .contact-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-md);
         }
         
-        .cert-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-right: 25px;
-            min-width: 45px;
+        .contact-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
         }
         
         /* Footer */
         footer {
-            background: var(--primary);
+            background: var(--dark);
             color: white;
             padding: 70px 0 30px;
-            position: relative;
-            overflow: hidden;
         }
         
         .footer-content {
@@ -439,8 +504,6 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
         }
         
         .footer-column h3 {
@@ -470,6 +533,7 @@
         
         .social-links {
             display: flex;
+            justify-content: center;
             margin-top: 30px;
         }
         
@@ -482,15 +546,15 @@
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             color: white;
-            margin-right: 15px;
-            transition: all 0.4s ease;
+            margin: 0 10px;
+            transition: var(--transition);
             font-size: 1.4rem;
         }
         
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
         }
         
         .copyright {
@@ -499,88 +563,88 @@
             border-top: 1px solid rgba(255,255,255,0.15);
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.05rem;
-            position: relative;
-            z-index: 1;
         }
         
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .hero-image {
-                width: 100px; /* Adjust for smaller screens */
-                height: 100px;
-            }
-        }
-        
         @media (max-width: 992px) {
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
+            .timeline:before {
+                left: 30px;
             }
-            .hero-image {
-                width: 80px; /* Adjust for smaller screens */
-                height: 80px;
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                left: 0;
+                padding-left: 70px;
+                padding-right: 0;
             }
-            .about-content {
-                grid-template-columns: 1fr;
+            
+            .timeline-dot {
+                left: 17px;
+                right: auto;
             }
-            .timeline::after {
-                left: 31px;
-            }
-            .experience-grid {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-                margin: 0 auto;
+            
+            .timeline-item:nth-child(odd) .timeline-content:after,
+            .timeline-item:nth-child(even) .timeline-content:after {
+                left: -15px;
+                border-width: 15px 15px 15px 0;
+                border-color: transparent var(--card-bg) transparent transparent;
+                right: auto;
             }
         }
         
         @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
             h1 {
                 font-size: 2.5rem;
             }
+            
             h2 {
                 font-size: 2rem;
             }
+            
             .hero h2 {
-                font-size: 1.6rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .contact-info p {
-                font-size: 0.9rem;
-            }
-            .btn {
-                width: 100%;
-                margin: 10px 0;
-                text-align: center;
-            }
-            .hero-btns {
-                flex-direction: column;
-            }
-            .hero-image {
-                width: 70px; /* Adjust for smaller screens */
-                height: 70px;
-            }
-            section {
-                padding: 50px 0;
+                font-size: 1.5rem;
             }
         }
         
         @media (max-width: 576px) {
-            h1 {
-                font-size: 2rem;
+            section {
+                padding: 60px 0;
             }
-            h2 {
-                font-size: 1.5rem;
+            
+            .hero-btns .btn {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
             }
-            .hero h2 {
-                font-size: 1.4rem;
-            }
-            .hero p {
-                font-size: 0.9rem;
+            
+            .contact-info {
+                width: 100%;
             }
         }
     </style>
@@ -590,15 +654,16 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">Ammar Ibrahim</div>
+                <div class="logo">Ammar <span>Ibrahim</span></div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#research">Research</a></li>
+                    <li><a href="#academic">Academic Experience</a></li>
+                    <li><a href="#professional">Professional Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#publications">Publications</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -613,24 +678,20 @@
             <div class="hero-image">
                 <img src="https://ieeexplore.ieee.org/mediastore/IEEE/content/author_profile_image/37088376152.png" alt="Dr. Ammar Ibrahim">
             </div>
-            <h1>Ammar Ibrahim</h1>
+            <h1>Ammar Ibrahim, Ph.D.</h1>
             <h2>Cybersecurity & Blockchain Research Expert</h2>
             
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <p>
-                    <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn</a> | 
-                    <i class="fab fa-ieee"></i> <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank">IEEE Profile</a> |
-                    <i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank">ResearchGate</a>
-                </p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn Profile</a></p>
             </div>
             
             <p>Multidisciplinary cybersecurity expert with a Ph.D. in Wireless and Cybersecurity. My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
             
             <div class="hero-btns">
                 <a href="#publications" class="btn">View Publications</a>
-                <a href="#contact" class="btn">Contact Me</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
         </div>
     </section>
@@ -638,304 +699,257 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">Academic Profile</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="academic-profile">
-                        <p>Dr. Ammar Ibrahim is a researcher and lecturer specializing in cybersecurity, wireless networks, and blockchain technology. With a Ph.D. from the Military Technical College in Cairo, he has developed innovative solutions at the intersection of cybersecurity and emerging technologies.</p>
-                        
-                        <div class="profile-highlight">
-                            <p>My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
-                        </div>
-                        
-                        <p>Currently serving as a lecturer at multiple prestigious institutions including the Military Technical College and AASTMT, Dr. Ibrahim supervises undergraduate projects in blockchain security, healthcare IoT, and secure wireless communication systems.</p>
-                    </div>
+            <div class="section-title">
+                <h2>Academic Profile</h2>
+            </div>
+            <div class="card">
+                <p>Dr. Ammar Ibrahim is a researcher and lecturer specializing in cybersecurity, wireless networks, and blockchain technology. With a Ph.D. from the Military Technical College in Cairo, he has developed innovative solutions at the intersection of cybersecurity and emerging technologies.</p>
+                
+                <div class="profile-highlight">
+                    <p><i class="fas fa-quote-left"></i> My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications. <i class="fas fa-quote-right"></i></p>
                 </div>
                 
-                <div class="about-text">
-                    <h2>Academic Appointments</h2>
-                    <div class="academic-profile">
-                        <div class="appointment-item">
-                            <h3> Lecturer</h3>
-                            <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
-                            <p class="date">2025–Present</p>
-                        </div>
-                        <div class="appointment-item">
-                            <h3>Lecturer</h3>
-                            <p>Technological Military College (TMC), Cairo</p>
-                            <p class="date">2025-Present</p>
-                        </div>
-                                                
-                        <div class="appointment-item">
-                            <h3>Assistant Lecturer</h3>
-                            <p>Technological Military College</p>
-                            <p class="date">2022–2025</p>
-                        </div>
-                        <div class="appointment-item">
-                            <h3>Assistant Lecturer</h3>
-                            <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
-                            <p class="date">2021–2025</p>
-                        </div>
-                        <div class="appointment-item">
-                            <h3>Assistant Lecturer</h3>
-                            <p>Military Technical College (MTC), Cairo</p>
-                            <p class="date">2019–2025</p>
-                        </div>
-                    </div>
-                </div>
+                <p>Currently serving as a lecturer at multiple prestigious institutions including the Military Technical College and AASTMT, Dr. Ibrahim supervises undergraduate projects in blockchain security, healthcare IoT, and secure wireless communication systems.</p>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section class="education" id="education">
+    <section id="education" style="background: #f8f9fa;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">Education</h2>
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            
             <div class="timeline">
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="date">2025 - Completed</div>
-                        <h3>Ph.D. in Wireless and Cybersecurity</h3>
-                        <p>Military Technical College (MTC), Cairo</p>
-                        <p>Research focused on integrating blockchain technology with wireless security protocols for IoT applications.</p>
+                        <h3><i class="fas fa-graduation-cap"></i> Ph.D. in Wireless and Cybersecurity</h3>
+                        <span class="date">2021 - 2025</span>
+                        <p>Military Technical College, Cairo</p>
+                        <p>Research focused on developing secure communication protocols using blockchain technology for IoT applications.</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="date">2017–2020</div>
-                        <h3>M.Sc. in Telecommunications Engineering</h3>
-                        <p>Arab Academy for Science, Technology & Maritime Transport (AAST)</p>
-                        <p>Grade: A+ | Thesis on advanced communication protocols for secure networks.</p>
+                        <h3><i class="fas fa-graduation-cap"></i> M.Sc. in Electrical Engineering (Communications)</h3>
+                        <span class="date">2017 - 2020</span>
+                        <p>Military Technical College, Cairo</p>
+                        <p>Specialized in secure communication systems and network protocols.</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="date">2011–2016</div>
-                        <h3>B.Sc. in Electrical, Electronics & Communications Engineering</h3>
-                        <p>Military Technical College (MTC)</p>
-                        <p>Comprehensive program covering core engineering principles with specialization in communications.</p>
+                        <h3><i class="fas fa-graduation-cap"></i> B.Sc. in Electrical Engineering (Communications)</h3>
+                        <span class="date">2012 - 2017</span>
+                        <p>Military Technical College, Cairo</p>
+                        <p>Graduated with honors in communications engineering.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Section -->
-    <section class="research" id="research">
+    <!-- Academic Experience -->
+    <section id="academic" style="background: #fff;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px;">Research Interests</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.2rem;">My research spans multiple domains within cybersecurity and emerging technologies, with a focus on practical applications and innovative solutions.</p>
+            <div class="section-title">
+                <h2>Academic Experience</h2>
+            </div>
             
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Advanced threat detection, network security, encryption technologies</p>
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
+                <span class="date">2025 - Present</span>
+                <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
+                <p>Teaching advanced cybersecurity courses and supervising student research projects.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Lecturer</h3>
+                <span class="date">2025 - Present</span>
+                <p>Technological Military College (TMC), Cairo</p>
+                <p>Developing curriculum for secure communication systems and cryptography.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
+                <span class="date">2022 - 2025</span>
+                <p>Technological Military College</p>
+                <p>Assisted in teaching communications engineering courses and lab sessions.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
+                <span class="date">2021 - 2025</span>
+                <p>Arab Academy for Science, Technology & Maritime Transport (AASTMT)</p>
+                <p>Conducted labs and tutorials for networking and security courses.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Assistant Lecturer</h3>
+                <span class="date">2019 - 2025</span>
+                <p>Military Technical College (MTC), Cairo</p>
+                <p>Supported undergraduate courses in wireless communications and network security.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="professional" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-laptop-code"></i> Visiting Lecturer</h3>
+                <span class="date">July 2025 - Present</span>
+                <p>Arab Academy for Science, Technology and Maritime Transport</p>
+                <ul>
+                    <li>Deliver specialized academic instruction in cybersecurity and data science</li>
+                    <li>Develop and assess curriculum modules and practical labs</li>
+                    <li>Conduct seminars on emerging cyber threats and governance frameworks</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-shield-alt"></i> Cyber Security Trainer</h3>
+                <span class="date">July 2025 - Present</span>
+                <p>Gentex Training Center</p>
+                <p>Provide training on cyber risk management processes, emphasizing practical labs and global frameworks.</p>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-network-wired"></i> Senior Communications Engineer</h3>
+                <span class="date">July 2020 - July 2025</span>
+                <p>Military Technical College</p>
+                <ul>
+                    <li>Supported MPLS L2VPN, L3VPN network services, and TDM connections</li>
+                    <li>Core IP network administration and troubleshooting</li>
+                    <li>Technical support for military customer issues and NOC team supervision</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #fff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Skills</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Research Skills</h3>
+                    <ul class="skills-list">
+                        <li>Blockchain Security</li>
+                        <li>IoT Security</li>
+                        <li>Threat Intelligence</li>
+                        <li>Cryptography</li>
+                        <li>Secure Protocol Design</li>
+                    </ul>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Wireless Networks</h3>
-                    <p>Secure protocols, 5G/6G security, wireless communication systems</p>
+                
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skills-list">
+                        <li>Network Security</li>
+                        <li>Wireless Communications</li>
+                        <li>Cybersecurity Frameworks</li>
+                        <li>Risk Management</li>
+                        <li>Incident Response</li>
+                    </ul>
                 </div>
-                <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Threat Intelligence</h3>
-                    <p>Behavioral analysis, predictive security, AI-driven threat detection</p>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
-                    <h3>Blockchain for IoT</h3>
-                    <p>Decentralized security, smart contracts, distributed ledger applications</p>
+                
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <ul class="skills-list">
+                        <li>تعلم مهارات اللغة الإنجليزية (للمبتدئين)</li>
+                        <li>(ISC)2 Security</li>
+                        <li>CCNA: Introduction to Networks</li>
+                        <li>Cisco Certified Network Associate - Voice (CCNA)</li>
+                        <li>ISC2 Candidate</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Publications Section -->
-    <section class="publications" id="publications">
+    <section id="publications" style="background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%); color: white;">
         <div class="container">
-            <h2 style="text-align: center; margin: 80px 0 40px;">Research Publications</h2>
-            
-            <div class="publications">
-                <div class="publication-item">
-                    <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</a>
-                    <div class="publication-meta">IEEE Conference Publication | 2022</div>
-                </div>
-                
-                <div class="publication-item">
-                    <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design of New Collision Resistant Hash Function for Blockchain in V2V Communication</a>
-                    <div class="publication-meta">IEEE SmartNet | 2019</div>
-                </div>
-                
-                <div class="publication-item">
-                    <a href="#" target="_blank" class="publication-title">Blockchain Supervision Strategy for Electronic Health Records</a>
-                    <div class="publication-meta">IEEE ICEENG | 2020</div>
-                </div>
-                
-                <div class="publication-item">
-                    <a href="#" target="_blank" class="publication-title">Decentralized IoT Trust Management via Blockchain</a>
-                    <div class="publication-meta">IEEE 3ICT | 2020</div>
-                </div>
-                
-                <div class="publication-item">
-                    <a href="#" target="_blank" class="publication-title">Blockchain for Decentralized Emergency Management System</a>
-                    <div class="publication-meta">IJCDS | 2023</div>
-                </div>
-                
-                <div class="publication-item">
-                    <a href="#" target="_blank" class="publication-title">DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</a>
-                    <div class="publication-meta">IEEE | 2024</div>
-                </div>
+            <div class="section-title">
+                <h2 style="color: white;">Research Publications</h2>
             </div>
             
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="https://ieeexplore.ieee.org/author/37088376152" class="btn" target="_blank">View All Publications on IEEE Xplore</a>
-                <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" class="btn">ResearchGate Profile</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">Professional Experience</h2>
-            
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Senior Communications Engineer</h3>
-                    </div>
-                    <div class="experience-content">
-                        <ul>
-                            <li>Deployed IP-based VoIP and microwave networks</li>
-                            <li>Led planning and optimization of wireless communication systems</li>
-                            <li>Interfaced with enterprise clients for customized network design</li>
-                            <li>Developed security protocols for critical infrastructure networks</li>
-                        </ul>
-                    </div>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Design New Collision Resistant Hash Function for Blockchain in V2V Communication</h3>
+                    <p>IEEE Conference on Blockchain Innovations, 2024</p>
                 </div>
                 
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Field Support Engineer</h3>
-                    </div>
-                    <div class="experience-content">
-                        <ul>
-                            <li>Installed long-range microwave links and antennas (up to 25km)</li>
-                            <li>Troubleshot MPLS systems, routers, and RF hardware</li>
-                            <li>Provided field engineering and diagnostics</li>
-                            <li>Implemented security measures for field communication systems</li>
-                        </ul>
-                    </div>
+                <div class="publication-item">
+                    <h3>Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</h3>
+                    <p>Journal of Medical Systems Security, 2023</p>
                 </div>
                 
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Supervision and Activities</h3>
-                    </div>
-                    <div class="experience-content">
-                        <p>Supervised multiple undergraduate capstone projects in:</p>
-                        <ul>
-                            <li>Blockchain security implementations</li>
-                            <li>Healthcare IoT systems</li>
-                            <li>Secure wireless communication systems</li>
-                            <li>Threat intelligence platforms</li>
-                        </ul>
-                    </div>
+                <div class="publication-item">
+                    <h3>A New Supervision Strategy based on Blockchain for Electronic Health Records</h3>
+                    <p>International Conference on Health Informatics, 2023</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Blockchain for Decentralized Emergency Management System</h3>
+                    <p>ACM Transactions on Emergency Management Systems, 2022</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</h3>
+                    <p>IEEE Internet of Things Journal, 2022</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
+    <!-- Contact Section -->
+    <section id="contact" style="background: #fff;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">Certifications</h2>
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
             
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Google Data Analytics Professional Certificate</h3>
-                        <div class="cert-meta">Coursera, 2021</div>
-                    </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>ammaribrahim177@gmail.com</p>
+                    <a href="mailto:ammaribrahim177@gmail.com" class="btn" style="margin-top: 20px;">Send Email</a>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Full-Stack Web Development Nanodegree</h3>
-                        <div class="cert-meta">Udacity, 2019-2020</div>
-                    </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Cairo, Egypt</p>
                 </div>
                 
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Data Analyst Nanodegree</h3>
-                        <div class="cert-meta">Udacity, 2020-2021</div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>CompTIA Security+ Certified</h3>
-                        <div class="cert-meta">2022</div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-user-secret"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Certified Ethical Hacker (CEH v11)</h3>
-                        <div class="cert-meta">EC-Council, 2023</div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-ibm"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>IBM Cybersecurity Analyst Professional Certificate</h3>
-                        <div class="cert-meta">Coursera, 2024</div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Cisco CyberOps Associate</h3>
-                        <div class="cert-meta">2023</div>
-                    </div>
+                <div class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally</p>
+                    <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank" class="btn" style="margin-top: 20px;">View Profile</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -944,24 +958,28 @@
                     <div class="social-links">
                         <a href="mailto:ammaribrahim177@gmail.com"><i class="fas fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank"><i class="fab fa-ieee"></i></a>
-                        <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank"><i class="fab fa-researchgate"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-column">
-                    <h3>Contact Information</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:ammaribrahim177@gmail.com"><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#academic">Academic Experience</a></li>
+                        <li><a href="#professional">Professional Experience</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-column">
-                    <h3>Professional Details</h3>
+                    <h3>Research Areas</h3>
                     <ul class="footer-links">
-                        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Ph.D. in Wireless and Cybersecurity</a></li>
-                        <li><a href="#about"><i class="fas fa-university"></i> Lecturer at MTC, AASTMT</a></li>
-                        <li><a href="#publications"><i class="fas fa-book"></i> 10+ Publications</a></li>
-                        <li><a href="#certifications"><i class="fas fa-certificate"></i> 7 Professional Certifications</a></li>
+                        <li>Blockchain Security</li>
+                        <li>IoT Security</li>
+                        <li>Wireless Communications</li>
+                        <li>Cryptography</li>
+                        <li>Threat Intelligence</li>
                     </ul>
                 </div>
             </div>
@@ -1006,6 +1024,12 @@
                     });
                 }
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
         });
     </script>
 </body>
