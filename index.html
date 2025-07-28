@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,23 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a3a6c;
-            --secondary: #2c5282;
-            --accent: #0ea5e9;
-            --accent-light: #38bdf8;
-            --accent-dark: #0284c7;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --info: #3b82f6; /* New color */
-            --danger: #ef4444; /* New color */
-            --card-bg: #ffffff;
-            --section-bg: #f1f5f9;
-            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            --gradient-success: linear-gradient(135deg, var(--success) 0%, #34d399 100%);
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-md: 0 8px 25px rgba(0,0,0,0.12);
-            --shadow-lg: 0 15px 40px rgba(0,0,0,0.15);
+            --primary: #4A90E2; /* Soft blue */
+            --secondary: #D9E4F5; /* Light blue for background */
+            --accent: #FF6F61; /* Warm coral for accents */
+            --text-color: #333; /* Dark text for readability */
+            --card-bg: #FFFFFF; /* Card background */
+            --shadow-md: 0 8px 25px rgba(0,0,0,0.1);
         }
         
         * {
@@ -35,23 +25,23 @@
         
         body {
             font-family: 'Poppins', sans-serif;
+            background: var(--secondary);
+            color: var(--text-color);
             line-height: 1.6;
-            color: var(--primary);
-            background: linear-gradient(135deg, #f8f9fa 0%, #e6f7ff 100%);
             overflow-x: hidden;
-            background-attachment: fixed;
         }
         
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
+            overflow: hidden;
         }
         
         h1, h2, h3, h4 {
@@ -62,21 +52,16 @@
         }
         
         h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
         
         h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
-            font-weight: 800;
         }
-        
+
         h2:after {
             content: '';
             position: absolute;
@@ -90,13 +75,13 @@
         
         p {
             margin-bottom: 20px;
-            color: var(--secondary);
+            color: var(--text-color);
             font-size: 1.1rem;
         }
         
         a {
             text-decoration: none;
-            color: var(--accent-dark);
+            color: var(--primary);
             transition: all 0.3s ease;
         }
         
@@ -106,8 +91,8 @@
         
         .btn {
             display: inline-block;
-            padding: 14px 35px;
-            background: var(--gradient-primary);
+            padding: 14px 30px;
+            background: var(--primary);
             color: white;
             border-radius: 50px;
             font-weight: 600;
@@ -115,44 +100,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1rem;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .btn:after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 20px;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(25deg);
-            transition: all 0.5s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
         
-        .btn:hover:after {
-            left: 120%;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 3px solid var(--accent);
-            color: var(--accent);
-            margin-left: 15px;
-            font-weight: 600;
-        }
-        
-        .btn-outline:hover {
+        .btn:hover {
             background: var(--accent);
-            color: white;
+            transform: translateY(-3px);
         }
         
         /* Header & Navigation */
@@ -163,15 +116,9 @@
             width: 100%;
             z-index: 1000;
             padding: 20px 0;
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
-            backdrop-filter: blur(12px);
-        }
-        
-        header.scrolled {
-            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
         }
         
         .navbar {
@@ -188,12 +135,6 @@
             align-items: center;
         }
         
-        .logo i {
-            margin-right: 12px;
-            color: var(--accent);
-            font-size: 2.2rem;
-        }
-        
         .nav-links {
             display: flex;
             list-style: none;
@@ -204,26 +145,14 @@
         }
         
         .nav-links a {
-            color: var(--primary);
+            color: var(--text-color);
             font-weight: 600;
             position: relative;
             font-size: 1.1rem;
         }
         
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--accent);
-            transition: width 0.4s ease;
-            border-radius: 2px;
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary);
         }
         
         .hamburger {
@@ -238,125 +167,40 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(26,58,108,0.08) 0%, rgba(14,165,233,0.08) 100%);
             position: relative;
             overflow: hidden;
-            padding-top: 100px;
+            background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(74, 144, 226, 0.7)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
         }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: -300px;
-            right: -300px;
-            width: 600px;
-            height: 600px;
-            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(26,58,108,0.1) 100%);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
+
         .hero-content {
-            max-width: 800px;
             position: relative;
             z-index: 2;
+            padding: 0 20px;
+            text-align: center;
+            color: white;
         }
-        
-        .hero h1 {
-            margin-bottom: 20px;
-        }
-        
-        .hero h2 {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 35px;
-            max-width: 700px;
-            line-height: 1.8;
-        }
-        
-        .contact-info {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            display: inline-block;
-            margin-bottom: 40px;
-            border-left: 5px solid var(--accent);
-        }
-        
-        .contact-info p {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-        }
-        
-        .contact-info i {
-            margin-right: 12px;
-            color: var(--accent);
-            width: 24px;
-            font-size: 1.2rem;
-        }
-        
-        .hero-btns {
-            margin-top: 40px;
-        }
-        
+
         .hero-image {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 32%;
-            max-width: 420px;
-            z-index: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 8px solid white;
-            animation: float 8s ease-in-out infinite;
+            position: relative;
+            width: 120px; /* Set a smaller size */
+            height: 120px; /* Set height equal to width for a circle */
+            border-radius: 50%; /* Makes the image circular */
+            overflow: hidden; /* Ensures the image fits within the circle */
+            margin: 20px auto; /* Center the image */
+            box-shadow: var(--shadow-md); /* Optional: Add shadow for better visibility */
         }
         
         .hero-image img {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .hero-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(-50%) translateY(0px); }
-            50% { transform: translateY(-50%) translateY(-25px); }
-            100% { transform: translateY(-50%) translateY(0px); }
+            width: 100%; /* Make image responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure image is treated as a block element */
         }
         
         /* About Section */
         .about {
-            background: var(--section-bg);
+            background: #F0F4FF; /* Light background for about section */
             position: relative;
             overflow: hidden;
-        }
-        
-        .about:before {
-            content: '';
-            position: absolute;
-            top: -150px;
-            right: -150px;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(26,58,108,0.1) 100%);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;
         }
         
         .about-content {
@@ -368,78 +212,34 @@
             z-index: 1;
         }
         
-        .about-text h2 {
-            margin-bottom: 40px;
-        }
-        
-        .about-text p {
-            margin-bottom: 25px;
-        }
-        
         .academic-profile {
             background: var(--card-bg);
             padding: 35px;
             border-radius: 20px;
             box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
-            border-left: 5px solid var(--accent);
             transition: transform 0.4s ease;
         }
         
         .academic-profile:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .academic-profile:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(26,58,108,0.03) 0%, rgba(14,165,233,0.03) 100%);
-            z-index: -1;
+            box-shadow: var(--shadow-md);
         }
         
         .profile-highlight {
-            background: var(--gradient-primary);
+            background: var(--primary);
             color: white;
             padding: 20px;
             border-radius: 12px;
             margin: 30px 0;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             font-size: 1.1rem;
             line-height: 1.7;
         }
         
-        .appointment-item {
-            padding: 15px 0;
-            border-bottom: 1px dashed rgba(14, 165, 233, 0.3);
-        }
-        
-        .appointment-item:last-child {
-            border-bottom: none;
-        }
-        
         /* Education Section */
         .education {
-            background: white;
+            background: #E4E9FF; /* Light background for education section */
             position: relative;
-        }
-        
-        .education:after {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            left: -150px;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(14,165,233,0.1) 100%);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;
         }
         
         .timeline {
@@ -453,7 +253,7 @@
             content: '';
             position: absolute;
             width: 5px;
-            background: var(--gradient-accent);
+            background: var(--primary);
             top: 0;
             bottom: 0;
             left: 50%;
@@ -467,73 +267,20 @@
             box-sizing: border-box;
         }
         
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
         .timeline-content {
             padding: 30px;
             background-color: var(--card-bg);
             border-radius: 15px;
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .timeline-content:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .timeline-content h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-        
-        .timeline-content .date {
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            display: inline-block;
-            padding: 5px 15px;
-            background: rgba(14, 165, 233, 0.1);
-            border-radius: 30px;
-        }
-        
         /* Research Section */
         .research {
-            background: var(--section-bg);
+            background: #F0F4FF; /* Light background for research section */
             position: relative;
-        }
-        
-        .research:before {
-            content: '';
-            position: absolute;
-            top: 100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(26,58,108,0.1) 0%, rgba(42,82,130,0.1) 100%);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;
         }
         
         .interests-grid {
@@ -550,37 +297,21 @@
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            border-top: 5px solid var(--accent);
-        }
-        
-        .interest-card:nth-child(1) {
-            border-top-color: var(--primary);
-        }
-        
-        .interest-card:nth-child(2) {
-            border-top-color: var(--accent);
-        }
-        
-        .interest-card:nth-child(3) {
-            border-top-color: var(--success);
-        }
-        
-        .interest-card:nth-child(4) {
-            border-top-color: var(--warning);
+            border-top: 5px solid var(--primary);
         }
         
         .interest-card:hover {
             transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
         
         .interest-icon {
             font-size: 3.5rem;
-            color: var(--accent);
+            color: var(--primary);
             margin-bottom: 30px;
             transition: transform 0.4s ease;
         }
@@ -589,19 +320,14 @@
             transform: scale(1.2);
         }
         
-        .interest-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
+        /* Publications Section */
         .publications {
-            background: var(--card-bg);
+            background: #E4E9FF; /* Light background for publications section */
             padding: 40px;
             border-radius: 20px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             position: relative;
             z-index: 1;
-            border-left: 5px solid var(--accent);
         }
         
         .publication-item {
@@ -612,13 +338,9 @@
         }
         
         .publication-item:hover {
-            background: rgba(14, 165, 233, 0.05);
+            background: rgba(255, 111, 97, 0.1);
             border-radius: 12px;
             padding: 25px;
-        }
-        
-        .publication-item:last-child {
-            border-bottom: none;
         }
         
         .publication-title {
@@ -632,65 +354,16 @@
         }
         
         .publication-meta {
-            color: var(--accent);
+            color: var(--primary);
             font-size: 1rem;
             margin-bottom: 15px;
             font-weight: 600;
         }
         
-        .publication-abstract {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            display: none;
-            border-left: 3px solid var(--accent);
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .abstract-btn {
-            background: var(--gradient-accent);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            margin: 15px 0;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .abstract-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-sm);
-        }
-        
         /* Experience Section */
         .experience {
-            background: white;
+            background: #F0F4FF; /* Light background for experience section */
             position: relative;
-            overflow: hidden;
-        }
-        
-        .experience:after {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            right: -150px;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(16,185,129,0.1) 100%);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: 0;
         }
         
         .experience-grid {
@@ -705,18 +378,18 @@
             background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
             position: relative;
         }
         
         .experience-card:hover {
             transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
         
         .experience-header {
-            background: var(--gradient-primary);
+            background: var(--primary);
             color: white;
             padding: 25px;
         }
@@ -726,41 +399,9 @@
             color: white;
         }
         
-        .experience-content {
-            padding: 30px;
-        }
-        
-        .experience-content h3 {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-        
-        .experience-content ul {
-            padding-left: 25px;
-            margin-bottom: 20px;
-        }
-        
-        .experience-content li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 25px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        .experience-content li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1.8rem;
-            top: -5px;
-        }
-        
         /* Certifications Section */
         .certifications {
-            background: var(--section-bg);
+            background: #E4E9FF; /* Light background for certifications section */
             position: relative;
         }
         
@@ -776,13 +417,11 @@
             background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             display: flex;
             align-items: flex-start;
             transition: transform 0.4s ease;
-            border-left: 5px solid var(--accent);
-            position: relative;
-            overflow: hidden;
+            border-left: 5px solid var(--primary);
         }
         
         .cert-card:hover {
@@ -792,20 +431,9 @@
         
         .cert-icon {
             font-size: 2.5rem;
-            color: var(--accent);
+            color: var(--primary);
             margin-right: 25px;
             min-width: 45px;
-        }
-        
-        .cert-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-        }
-        
-        .cert-meta {
-            color: var(--accent);
-            font-size: 1rem;
-            font-weight: 600;
         }
         
         /* Footer */
@@ -815,19 +443,6 @@
             padding: 70px 0 30px;
             position: relative;
             overflow: hidden;
-        }
-        
-        footer:before {
-            content: '';
-            position: absolute;
-            top: -150px;
-            left: -150px;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(26,58,108,0.1) 100%);
-            border-radius: 50%;
-            opacity: 0.2;
-            z-index: 0;
         }
         
         .footer-content {
@@ -886,39 +501,7 @@
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-8px);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 18px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-links a i {
-            margin-right: 12px;
-            font-size: 1.2rem;
-            color: var(--accent);
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-            padding-left: 8px;
-        }
-        
-        .footer-links a:hover i {
-            transform: scale(1.2);
+            box-shadow: var(--shadow-md);
         }
         
         .copyright {
@@ -931,64 +514,14 @@
             z-index: 1;
         }
         
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            z-index: 999;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px) !important;
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* Progress bar */
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: transparent;
-            z-index: 1001;
-        }
-        
-        .progress-bar {
-            height: 4px;
-            background: var(--gradient-accent);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 3rem;
             }
-            
             .hero-image {
-                width: 35%;
+                width: 100px; /* Adjust for smaller screens */
+                height: 100px;
             }
         }
         
@@ -996,55 +529,18 @@
             .hero-content {
                 max-width: 100%;
                 text-align: center;
-                padding-top: 100px;
             }
-            
-            .contact-info {
-                text-align: left;
-                margin: 0 auto 40px;
-                width: 90%;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-            }
-            
             .hero-image {
                 position: relative;
-                top: 0;
-                right: 0;
-                transform: none;
-                width: 350px;
-                height: auto;
-                margin: 50px auto 0;
-                animation: float 8s ease-in-out infinite;
+                width: 80px; /* Adjust for smaller screens */
+                height: 80px;
             }
-            
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
             .timeline::after {
                 left: 31px;
             }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 80px;
-                padding-right: 30px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
             .experience-grid {
                 grid-template-columns: 1fr;
                 max-width: 600px;
@@ -1054,114 +550,59 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
-            
             h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-            
-            .nav-links {
-                position: fixed;
-                top: 85px;
-                left: -100%;
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+            .btn {
                 width: 100%;
-                height: calc(100vh - 85px);
-                background: white;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .hero-btns {
                 flex-direction: column;
-                align-items: center;
-                padding-top: 60px;
-                transition: all 0.4s ease;
             }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 20px 0;
-            }
-            
-            .nav-links a {
-                font-size: 1.3rem;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
             .hero-image {
-                width: 280px;
+                width: 70px; /* Adjust for smaller screens */
+                height: 70px;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
+            section {
+                padding: 50px 0;
             }
         }
         
         @media (max-width: 576px) {
             h1 {
-                font-size: 2.4rem;
+                font-size: 2rem;
             }
-            
             h2 {
-                font-size: 1.9rem;
+                font-size: 1.5rem;
             }
-            
             .hero h2 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
-            
             .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .contact-info p {
-                font-size: 1rem;
-            }
-            
-            .btn, .btn-outline {
-                width: 100%;
-                margin: 10px 0;
-                text-align: center;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .hero-image {
-                width: 250px;
-            }
-            
-            section {
-                padding: 70px 0;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Progress bar -->
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
-    
-    <!-- Back to top button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
+                <div class="logo">Ammar Ibrahim</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -1180,31 +621,28 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Ammar Ibrahim</h1>
-                <h2>Cybersecurity & Blockchain Research Expert</h2>
-                
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                    <p>
-                        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank" style="color: var(--accent);">LinkedIn</a> | 
-                        <i class="fab fa-ieee"></i> <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank" style="color: var(--accent);">IEEE Profile</a> |
-                        <i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank" style="color: var(--accent);">ResearchGate</a>
-                    </p>
-                    <p>PhD in Wireless & Cybersecurity ⚡ | Cybersecurity Instructor @ AMIT 🛡️ | AI & Data Instructor (Deci) @ Almentor 📊 | Cyber Risk Trainer @ Gentex | Lecturer @ AAST, MTC & TMC 👨‍🏫 | Python & Data Analysis 🐍 |</p>
-                </div>
-                
-                <p>Multidisciplinary cybersecurity expert with a Ph.D. in Wireless and Cybersecurity. My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
-                
-                <div class="hero-btns">
-                    <a href="#publications" class="btn">View Publications</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-            </div>
+        <div class="hero-content">
             <div class="hero-image">
                 <img src="https://ieeexplore.ieee.org/mediastore/IEEE/content/author_profile_image/37088376152.png" alt="Dr. Ammar Ibrahim">
+            </div>
+            <h1>Ammar Ibrahim</h1>
+            <h2>Cybersecurity & Blockchain Research Expert</h2>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> ammaribrahim177@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                <p>
+                    <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ammar-ibrahim-081059151/" target="_blank">LinkedIn</a> | 
+                    <i class="fab fa-ieee"></i> <a href="https://ieeexplore.ieee.org/author/37088376152" target="_blank">IEEE Profile</a> |
+                    <i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" target="_blank">ResearchGate</a>
+                </p>
+            </div>
+            
+            <p>Multidisciplinary cybersecurity expert with a Ph.D. in Wireless and Cybersecurity. My research integrates blockchain, IoT, and threat intelligence with practical deployment and instructional experience in secure communications.</p>
+            
+            <div class="hero-btns">
+                <a href="#publications" class="btn">View Publications</a>
+                <a href="#contact" class="btn">Contact Me</a>
             </div>
         </div>
     </section>
@@ -1334,69 +772,45 @@
     </section>
 
     <!-- Publications Section -->
-    <section class="publications" id="publications" style="background: var(--section-bg);">
+    <section class="publications" id="publications">
         <div class="container">
             <h2 style="text-align: center; margin: 80px 0 40px;">Research Publications</h2>
             
-            <div class="publications" style="margin-top: 40px;">
+            <div class="publications">
                 <div class="publication-item">
                     <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</a>
                     <div class="publication-meta">IEEE Conference Publication | 2022</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> This paper presents a novel collision-resistant hash function specifically designed for IoT healthcare blockchain applications. The proposed algorithm enhances ledger security while maintaining efficiency for resource-constrained medical IoT devices. Our implementation demonstrates significant improvements in processing speed and resistance to cryptographic attacks compared to existing solutions.</p>
-                    </div>
                 </div>
                 
                 <div class="publication-item">
                     <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design of New Collision Resistant Hash Function for Blockchain in V2V Communication</a>
                     <div class="publication-meta">IEEE SmartNet | 2019</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> This research introduces a specialized hash function for Vehicle-to-Vehicle (V2V) communication systems secured by blockchain technology. The proposed cryptographic solution addresses the unique challenges of high-speed mobile environments, providing enhanced collision resistance and faster verification times for real-time automotive applications.</p>
-                    </div>
                 </div>
                 
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Blockchain Supervision Strategy for Electronic Health Records</a>
                     <div class="publication-meta">IEEE ICEENG | 2020</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> This paper proposes a novel blockchain-based supervision framework for electronic health records (EHR) that enhances data integrity while maintaining patient privacy. The solution implements a multi-layer access control mechanism and decentralized audit trails, significantly improving compliance with healthcare regulations and preventing unauthorized access to sensitive medical data.</p>
-                    </div>
                 </div>
                 
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Decentralized IoT Trust Management via Blockchain</a>
                     <div class="publication-meta">IEEE 3ICT | 2020</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> We present a decentralized trust management system for IoT networks using blockchain technology. The solution eliminates single points of failure in device authentication and establishes a reputation-based trust model that dynamically adjusts device privileges based on behavior patterns, significantly enhancing security in large-scale IoT deployments.</p>
-                    </div>
                 </div>
                 
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Blockchain for Decentralized Emergency Management System</a>
                     <div class="publication-meta">IJCDS | 2023</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> This research implements a blockchain-based emergency management system that coordinates response efforts across multiple agencies without central oversight. The solution provides real-time, tamper-proof information sharing while maintaining data integrity during crisis situations, significantly improving response times and resource allocation efficiency.</p>
-                    </div>
                 </div>
                 
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</a>
                     <div class="publication-meta">IEEE | 2024</div>
-                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
-                    <div class="publication-abstract">
-                        <p><strong>Abstract:</strong> This paper presents a hybrid approach combining machine learning algorithms with blockchain technology to detect and mitigate DDoS attacks in IoT environments. The system establishes a decentralized defense mechanism where IoT devices collaboratively identify and isolate malicious traffic patterns, significantly improving network resilience against large-scale coordinated attacks.</p>
-                    </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
                 <a href="https://ieeexplore.ieee.org/author/37088376152" class="btn" target="_blank">View All Publications on IEEE Xplore</a>
-                <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" class="btn btn-outline" target="_blank" style="margin-left: 20px;">ResearchGate Profile</a>
+                <a href="https://www.researchgate.net/profile/Ammar-El-Sayed" class="btn">ResearchGate Profile</a>
             </div>
         </div>
     </section>
@@ -1511,7 +925,7 @@
                 
                 <div class="cert-card">
                     <div class="cert-icon">
-                        <i class="fab fa-ibm"></i>
+                        <i class="fas fa-ibm"></i>
                     </div>
                     <div class="cert-content">
                         <h3>IBM Cybersecurity Analyst Professional Certificate</h3>
@@ -1570,16 +984,6 @@
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -1614,82 +1018,6 @@
                     });
                 }
             });
-        });
-        
-        // Abstract toggle functionality
-        document.querySelectorAll('.abstract-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const abstract = button.nextElementSibling;
-                if (abstract.style.display === 'block') {
-                    abstract.style.display = 'none';
-                    button.innerHTML = '<i class="fas fa-book-open"></i> Show Abstract';
-                } else {
-                    abstract.style.display = 'block';
-                    button.innerHTML = '<i class="fas fa-times"></i> Hide Abstract';
-                }
-            });
-        });
-        
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.interest-card, .experience-card, .cert-card, .timeline-content').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Back to top button
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Progress bar
-        const progressBar = document.getElementById('progressBar');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            progressBar.style.width = scrollPercentage + '%';
-        });
-        
-        // Add animation to sections on scroll
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            sectionObserver.observe(section);
         });
     </script>
 </body>
