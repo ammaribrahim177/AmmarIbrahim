@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Ammar Ibrahim - Cybersecurity Research Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a3a6c;
@@ -20,6 +20,9 @@
             --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
             --gradient-success: linear-gradient(135deg, var(--success) 0%, #34d399 100%);
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 25px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,0.15);
         }
         
         * {
@@ -113,7 +116,7 @@
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+            box-shadow: var(--shadow-sm);
         }
         
         .btn:after {
@@ -130,7 +133,7 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+            box-shadow: var(--shadow-md);
         }
         
         .btn:hover:after {
@@ -159,14 +162,14 @@
             z-index: 1000;
             padding: 20px 0;
             background: rgba(255, 255, 255, 0.97);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             transition: all 0.4s ease;
             backdrop-filter: blur(12px);
         }
         
         header.scrolled {
             padding: 15px 0;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
         }
         
         .navbar {
@@ -279,7 +282,7 @@
             background: white;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-md);
             display: inline-block;
             margin-bottom: 40px;
             border-left: 5px solid var(--accent);
@@ -313,7 +316,7 @@
             z-index: 1;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-lg);
             border: 8px solid white;
             animation: float 8s ease-in-out infinite;
         }
@@ -375,7 +378,7 @@
             background: var(--card-bg);
             padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
             border-left: 5px solid var(--accent);
@@ -384,6 +387,7 @@
         
         .academic-profile:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
         }
         
         .academic-profile:after {
@@ -403,9 +407,18 @@
             padding: 20px;
             border-radius: 12px;
             margin: 30px 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
             font-size: 1.1rem;
             line-height: 1.7;
+        }
+        
+        .appointment-item {
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(14, 165, 233, 0.3);
+        }
+        
+        .appointment-item:last-child {
+            border-bottom: none;
         }
         
         /* Education Section */
@@ -464,7 +477,7 @@
             padding: 30px;
             background-color: var(--card-bg);
             border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             border-left: 4px solid var(--primary);
             transition: all 0.4s ease;
             position: relative;
@@ -483,7 +496,7 @@
         
         .timeline-content:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow-lg);
         }
         
         .timeline-content h3 {
@@ -535,7 +548,7 @@
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -560,7 +573,7 @@
         
         .interest-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow-lg);
         }
         
         .interest-icon {
@@ -583,7 +596,7 @@
             background: var(--card-bg);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             position: relative;
             z-index: 1;
             border-left: 5px solid var(--accent);
@@ -630,6 +643,12 @@
             margin-top: 15px;
             display: none;
             border-left: 3px solid var(--accent);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .abstract-btn {
@@ -642,11 +661,14 @@
             margin: 15px 0;
             transition: all 0.3s ease;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .abstract-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.4);
+            box-shadow: var(--shadow-sm);
         }
         
         /* Experience Section */
@@ -681,14 +703,14 @@
             background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             transition: all 0.4s ease;
             position: relative;
         }
         
         .experience-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+            box-shadow: var(--shadow-lg);
         }
         
         .experience-header {
@@ -752,7 +774,7 @@
             background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
             display: flex;
             align-items: flex-start;
             transition: transform 0.4s ease;
@@ -763,6 +785,7 @@
         
         .cert-card:hover {
             transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
         }
         
         .cert-icon {
@@ -861,7 +884,7 @@
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+            box-shadow: var(--shadow-sm);
         }
         
         .footer-links {
@@ -904,6 +927,56 @@
             font-size: 1.05rem;
             position: relative;
             z-index: 1;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--gradient-accent);
+            width: 0%;
+            transition: width 0.3s ease;
         }
         
         /* Responsive Design */
@@ -1022,6 +1095,13 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1066,10 +1146,21 @@
     </style>
 </head>
 <body>
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav class="navbar">
+                <a href="#" class="logo"><i class="fas fa-user-shield"></i> Dr.AI</a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -1120,9 +1211,9 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
+            <h2 style="text-align: center; margin-bottom: 60px;">Academic Profile</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Academic Profile</h2>
                     <div class="academic-profile">
                         <p>Dr. Ammar Ibrahim is a researcher and lecturer specializing in cybersecurity, wireless networks, and blockchain technology. With a Ph.D. from the Military Technical College in Cairo, he has developed innovative solutions at the intersection of cybersecurity and emerging technologies.</p>
                         
@@ -1135,7 +1226,7 @@
                 </div>
                 
                 <div class="about-text">
-                    <h2>Academic</h2>
+                    <h2>Academic Appointments</h2>
                     <div class="academic-profile">
                         <div class="appointment-item">
                             <h3> Lecturer</h3>
@@ -1250,7 +1341,7 @@
                 <div class="publication-item">
                     <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design and Implementation of New Collision Resistant Fast Hash Function Family for IoT Healthcare Blockchain Ledger</a>
                     <div class="publication-meta">IEEE Conference Publication | 2022</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> This paper presents a novel collision-resistant hash function specifically designed for IoT healthcare blockchain applications. The proposed algorithm enhances ledger security while maintaining efficiency for resource-constrained medical IoT devices. Our implementation demonstrates significant improvements in processing speed and resistance to cryptographic attacks compared to existing solutions.</p>
                     </div>
@@ -1259,7 +1350,7 @@
                 <div class="publication-item">
                     <a href="https://ieeexplore.ieee.org/document/9990894/" target="_blank" class="publication-title">Design of New Collision Resistant Hash Function for Blockchain in V2V Communication</a>
                     <div class="publication-meta">IEEE SmartNet | 2019</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> This research introduces a specialized hash function for Vehicle-to-Vehicle (V2V) communication systems secured by blockchain technology. The proposed cryptographic solution addresses the unique challenges of high-speed mobile environments, providing enhanced collision resistance and faster verification times for real-time automotive applications.</p>
                     </div>
@@ -1268,7 +1359,7 @@
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Blockchain Supervision Strategy for Electronic Health Records</a>
                     <div class="publication-meta">IEEE ICEENG | 2020</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> This paper proposes a novel blockchain-based supervision framework for electronic health records (EHR) that enhances data integrity while maintaining patient privacy. The solution implements a multi-layer access control mechanism and decentralized audit trails, significantly improving compliance with healthcare regulations and preventing unauthorized access to sensitive medical data.</p>
                     </div>
@@ -1277,7 +1368,7 @@
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Decentralized IoT Trust Management via Blockchain</a>
                     <div class="publication-meta">IEEE 3ICT | 2020</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> We present a decentralized trust management system for IoT networks using blockchain technology. The solution eliminates single points of failure in device authentication and establishes a reputation-based trust model that dynamically adjusts device privileges based on behavior patterns, significantly enhancing security in large-scale IoT deployments.</p>
                     </div>
@@ -1286,7 +1377,7 @@
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">Blockchain for Decentralized Emergency Management System</a>
                     <div class="publication-meta">IJCDS | 2023</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> This research implements a blockchain-based emergency management system that coordinates response efforts across multiple agencies without central oversight. The solution provides real-time, tamper-proof information sharing while maintaining data integrity during crisis situations, significantly improving response times and resource allocation efficiency.</p>
                     </div>
@@ -1295,7 +1386,7 @@
                 <div class="publication-item">
                     <a href="#" target="_blank" class="publication-title">DDoS Mitigation in IoT Using Machine Learning and Blockchain Integration</a>
                     <div class="publication-meta">IEEE | 2024</div>
-                    <button class="abstract-btn">Show Abstract</button>
+                    <button class="abstract-btn"><i class="fas fa-book-open"></i> Show Abstract</button>
                     <div class="publication-abstract">
                         <p><strong>Abstract:</strong> This paper presents a hybrid approach combining machine learning algorithms with blockchain technology to detect and mitigate DDoS attacks in IoT environments. The system establishes a decentralized defense mechanism where IoT devices collaboratively identify and isolate malicious traffic patterns, significantly improving network resilience against large-scale coordinated attacks.</p>
                     </div>
@@ -1530,10 +1621,10 @@
                 const abstract = button.nextElementSibling;
                 if (abstract.style.display === 'block') {
                     abstract.style.display = 'none';
-                    button.textContent = 'Show Abstract';
+                    button.innerHTML = '<i class="fas fa-book-open"></i> Show Abstract';
                 } else {
                     abstract.style.display = 'block';
-                    button.textContent = 'Hide Abstract';
+                    button.innerHTML = '<i class="fas fa-times"></i> Hide Abstract';
                 }
             });
         });
@@ -1553,6 +1644,51 @@
         
         document.querySelectorAll('.interest-card, .experience-card, .cert-card, .timeline-content').forEach(el => {
             observer.observe(el);
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Progress bar
+        const progressBar = document.getElementById('progressBar');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = scrollPercentage + '%';
+        });
+        
+        // Add animation to sections on scroll
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            sectionObserver.observe(section);
         });
     </script>
 </body>
